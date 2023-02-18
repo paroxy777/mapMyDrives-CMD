@@ -32,8 +32,8 @@ SET mapWTC=%ERRORLEVEL%
 
 :: MAIN APP BODY
 IF %clearMaps% EQU 1 (CALL :sub_clear_exisiting) ELSE (ECHO --Keeping current mapped drives.)
-IF %clearMaps% EQU 1 (CALL :sub_map_home) ELSE (ECHO --Mapping drives for Home Server 10.77.80.50.)
-IF %clearMaps% EQU 1 (CALL :sub_map_wtc) ELSE (ECHO --Mapping drives for WTC Server 192.168.1.10.)
+IF %clearMaps% EQU 1 (CALL :sub_map_home) ELSE (ECHO --SKIP:Mapping drives for Home Server 10.77.80.50.)
+IF %clearMaps% EQU 1 (CALL :sub_map_wtc) ELSE (ECHO --SKIP:Mapping drives for WTC Server 192.168.1.10.)
 GOTO eof
 
 :: SUB-ROUTINES
@@ -91,3 +91,4 @@ SET "mapWTC="
 SET "clearMaps="
 SET "smbUser="
 SET "smbPass="
+EXIT /B 0
