@@ -52,6 +52,7 @@ SET /P smbUser=Enter SMB username on [10.77.80.50]:
 SET /P smbPass=Enter SMB password for [%smbUser%] on [10.77.80.50]: 
 ECHO --- H: for "Downloads"
 NET USE H: \\10.77.80.50\Downloads %smbPass% /user:%smbUser% /persistent:yes <NUL
+SET "smbUser="
 SET "smbPass="
 ECHO --- I: for "David Stuff"
 NET USE I: "\\10.77.80.50\David Stuff" /persistent:yes <NUL
@@ -67,6 +68,7 @@ SET /P smbUser=Enter SMB username on [192.168.1.10]:
 SET /P smbPass=Enter SMB password for [%smbUser%] on [192.168.1.10]: 
 ECHO --- S: for "isos"
 NET USE S: \\192.168.1.10\isos %smbPass% /user:%smbUser% /persistent:yes <NUL
+SET "smbUser="
 SET "smbPass="
 ECHO --- T: for "Tools"
 NET USE T: \\192.168.1.10\Tools /persistent:yes <NUL
@@ -87,4 +89,5 @@ SET "barSingle="
 SET "mapHome="
 SET "mapWTC="
 SET "clearMaps="
+SET "smbUser="
 SET "smbPass="
